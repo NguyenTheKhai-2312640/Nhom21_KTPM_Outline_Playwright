@@ -35,7 +35,9 @@
     "test:watch": "TZ=UTC vitest",
     "vite:dev": "VITE_CJS_IGNORE_WARNING=true vite",
     "vite:build": "VITE_CJS_IGNORE_WARNING=true vite build",
-    "vite:preview": "VITE_CJS_IGNORE_WARNING=true vite preview"
+    "vite:preview": "VITE_CJS_IGNORE_WARNING=true vite preview",
+    "test:vrt": "playwright test",
+    "test:vrt:update": "playwright test --update-snapshots"
   },
   "funding": {
     "type": "GitHub Sponsors ❤",
@@ -281,6 +283,7 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^10.5.0",
+    "@playwright/test": "^1.64.0",
     "@relative-ci/agent": "^4.3.1",
     "@swc/cli": "^0.8.1",
     "@swc/core": "^1.15.32",

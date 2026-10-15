@@ -262,6 +262,30 @@ export default class AuthStore extends Store<Team> {
         }
       });
     } catch (err) {
+      //======================================================================
+      //Debug
+      const error = toError(err);
+
+      // 401 chỉ có nghĩa là chưa đăng nhập.
+      // Không được ném ra ngoài vì sẽ làm màn hình Login bị lỗi console.
+      const status =
+        (error as { status?: number })?.status ??
+        (error as { response?: { status?: number } })?.response?.status;
+
+      // 401 chỉ là chưa đăng nhập, không ném lỗi ra ngoài
+      if (status === 401) {
+        runInAction(() => {
+          this.currentUserId = null;
+          this.currentTeamId = null;
+          this.collaborationToken = null;
+          this.availableTeams = undefined;
+          this.isSuspended = false;
+          this.suspendedContactEmail = undefined;
+        });
+        return;
+      }
+      //======================================================================
+
       if (
         err instanceof Error &&
         "error" in err &&

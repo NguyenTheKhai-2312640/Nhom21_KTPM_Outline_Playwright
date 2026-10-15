@@ -1,0 +1,12 @@
+/* tests/screenshot.css */
+/* Ẩn các phần tử động hoặc dễ làm baseline nhiễu. */
+/* File này được áp dụng khi chụp screenshot. */
+
+[data-testid="live-clock"],
+[data-testid="notification-badge"],
+[data-testid="toast"],
+iframe,
+video,
+canvas {
+    visibility: hidden !important;
+}

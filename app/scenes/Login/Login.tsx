@@ -183,6 +183,26 @@ function Login({ children, onBack }: Props) {
     return <LoadingIndicator />;
   }
 
+  //======================================================================
+  // Nếu chưa cấu hình provider đăng nhập nào, hiển thị màn hình hướng dẫn
+  // thay vì để trang trống.
+  if (!config.providers.length) {
+    return (
+      <Background>
+        <Centered gap={12}>
+          <PageTitle title={config.name ? `${config.name} – Login` : "Login"} />
+          <StyledHeading as="h2" centered>
+            No sign-in provider configured
+          </StyledHeading>
+          <Content>
+            Please add at least one auth provider in .env, then restart the server.
+          </Content>
+        </Centered>
+      </Background>
+    );
+  }
+  //======================================================================
+
   // The passkey ceremony is triggered automatically here, so render the
   // "Signing in" screen in place of the login buttons. The passkey provider is
   // still mounted (hidden) to drive the ceremony and form submission, revealing
