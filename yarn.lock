@@ -14950,10 +14950,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nodemailer@npm:10.0.12, nodemailer@npm:^10.0.9":
+"nodemailer@npm:10.0.12":
   version: 10.0.12
   resolution: "nodemailer@npm:10.0.12"
   checksum: 10c0/1d816272d9b611f3dde6b9b25cb69a54dba558cc4655b60c620d96fee6bedda3c30ae1c002a30c6e45690559324f06a35b7e585d18ae64c303dc2eebc5e6a184
+  languageName: node
+  linkType: hard
+
+"nodemailer@npm:^10.1.0":
+  version: 10.1.0
+  resolution: "nodemailer@npm:10.1.0"
+  checksum: 10c0/5715e92c8abc117df26ac97e1b55a571a5442afb995d38c1385d03dabfd0d538939f7db1246494af212e3e0351f23d8d17918b6bd85b8a76b56be1232162b8db
   languageName: node
   linkType: hard
 
@@ -15471,7 +15478,7 @@ __metadata:
     msw: "npm:^2.15.0"
     natural-sort: "npm:^1.0.0"
     node-fetch: "npm:2.7.0"
-    nodemailer: "npm:^10.0.9"
+    nodemailer: "npm:^10.1.0"
     nodemon: "npm:^3.1.14"
     octokit: "npm:^5.0.5"
     outline-icons: "npm:^4.6.0"
