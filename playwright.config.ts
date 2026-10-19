@@ -44,6 +44,14 @@ export default defineConfig({
     },
   },
 
+  // ... other configs
+  webServer: {
+    command: 'yarn dev',
+    url: 'http://127.0.0.1:3000',
+    reuseExistingServer: true,
+    timeout: 180000,
+  },
+
   // Có thể thêm reporter nếu muốn xuất báo cáo HTML.
   reporter: [['list'], ['html']],
 });

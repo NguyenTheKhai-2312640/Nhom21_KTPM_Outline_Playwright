@@ -1,12 +1,46 @@
-/* tests/screenshot.css */
-/* Ẩn các phần tử động hoặc dễ làm baseline nhiễu. */
-/* File này được áp dụng khi chụp screenshot. */
+/* Giảm nhiễu khi chụp snapshot */
 
-[data-testid="live-clock"],
-[data-testid="notification-badge"],
+html {
+    scroll-behavior: auto !important;
+}
+
+*,
+*::before,
+*::after {
+    animation: none !important;
+    transition: none !important;
+    caret-color: transparent !important;
+}
+
+input,
+textarea,
+[contenteditable="true"] {
+    caret-color: transparent !important;
+}
+
+::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+}
+
 [data-testid="toast"],
-iframe,
-video,
-canvas {
+[role="status"],
+[role="alert"],
+[aria-live="polite"],
+[aria-live="assertive"],
+.toast,
+.toaster,
+.notification,
+.notifications {
     visibility: hidden !important;
+}
+
+/* Ẩn con trỏ text nhấp nháy trong editor */
+.ProseMirror-cursor {
+    display: none !important;
+}
+
+/* Ẩn tooltip tạm thời nếu có */
+[role="tooltip"] {
+    display: none !important;
 }
